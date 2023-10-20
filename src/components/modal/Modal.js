@@ -65,7 +65,7 @@ const Modal = ({ id, closeModal }) => {
 
               <div className="px-2 mb-4">
                 <h6 className="font-bold text-base mb-1">STORY:</h6>
-                <p>{tv?.Plot?.replace(/(<([^>]+)>)/gi, '')}</p>
+                <p>{tv?.Plot}</p>
               </div>
               <div className="px-2 mb-4">
                 <h6 className="font-bold text-base mb-1">Director:</h6>

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export default function getPokemonApi(title, pageNumber) {
+export default function getMoviesByTitleApi(title, pageNumber) {
   const url =
-    'http://www.omdbapi.com/?apikey=9ddde0b3&type=movie&s=' +
+    'http://www.omdbapi.com/?apikey=9ddde0b3&type=movie&plot=full&s=' +
     title +
     '&page=' +
     pageNumber;

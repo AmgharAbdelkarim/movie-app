@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import SearchInput from '../../components/searchInput';
-import getMoviesBytitle from '../../api/getMoviesByTitle';
-import Modal from '../../components/modal';
+import getMoviesByTitle from '../../api/getMoviesByTitle';
+import MovieDetail from './movieDetail';
 
 const MovieSearch = () => {
   const [movieTitle, setMovieTitle] = useState();
@@ -11,12 +11,13 @@ const MovieSearch = () => {
 
   let { data, isLoading, isError } = useQuery({
     queryKey: ['movies', movieTitle, pageNumber],
-    queryFn: () => getMoviesBytitle(movieTitle, pageNumber),
+    queryFn: () => getMoviesByTitle(movieTitle, pageNumber),
   });
 
   const movies = data?.data?.Search ?? [];
 
   const onSearchMovie = (value) => {
+    setPageNumber(1);
     setMovieTitle(value);
   };
 
@@ -25,6 +26,8 @@ const MovieSearch = () => {
   };
 
   const numberOfPages = Math.ceil(data?.data?.totalResults / 10);
+
+  const isPagination = movies?.length > 0 && numberOfPages > 1;
 
   return (
     <div className="bg-light_black h-full w-full ">
@@ -53,7 +56,7 @@ const MovieSearch = () => {
           </div>
         )}
       </div>
-      {movies?.length > 0 && numberOfPages > 1 && (
+      {isPagination && (
         <div className="flex justify-end items-center px-10">
           <button
             type="button"
@@ -77,7 +80,7 @@ const MovieSearch = () => {
         </div>
       )}
 
-      {movieId && <Modal id={movieId} closeModal={closeModal} />}
+      {movieId && <MovieDetail movieId={movieId} closeModal={closeModal} />}
     </div>
   );
 };

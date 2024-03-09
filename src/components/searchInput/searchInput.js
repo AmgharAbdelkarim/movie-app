@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const SearchInput = ({ onSearchMovie }) => {
   const [value, setValue] = useState('');
+
   return (
     <form
       className="w-96"

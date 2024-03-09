@@ -13,11 +13,11 @@ body {
 
 @layer base {
   body {
-      @apply bg-light_black text-white;
+    @apply bg-light_black text-white;
   }
 
   img {
-      @apply object-cover w-full h-full select-none;
+    @apply object-cover w-full h-full select-none;
   }
 }
 code {
@@ -25,6 +25,7 @@ code {
     monospace;
 }
 html,
-body, #root {
+body,
+#root {
   height: 100%;
 }

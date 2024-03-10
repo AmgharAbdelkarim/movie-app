@@ -17,7 +17,7 @@ body {
   }
 
   img {
-    @apply object-cover w-full h-full select-none;
+    @apply h-full w-full select-none object-cover;
   }
 }
 code {

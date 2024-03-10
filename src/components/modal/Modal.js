@@ -1,8 +1,8 @@
 const Modal = ({ children }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 ">
+    <div className="fixed inset-0 z-50 flex items-center justify-center ">
       <div className="fixed inset-0 bg-black opacity-50"></div>
-      <div className="relative w-full max-w-3xl h-4/6 p-6 rounded shadow-lg z-10 dark:text-gray-400 dark:bg-gray-700 ">
+      <div className="relative z-10 h-4/6 w-full max-w-3xl rounded p-6 shadow-lg dark:bg-gray-700 dark:text-gray-400 ">
         {children}
       </div>
     </div>
@@ -10,14 +10,14 @@ const Modal = ({ children }) => {
 };
 
 const Header = ({ closeModal }) => (
-  <div className="flex justify-end py-4 border-b rounded-t">
+  <div className="flex justify-end rounded-t border-b py-4">
     <button
       type="button"
-      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       onClick={closeModal}
     >
       <svg
-        className="w-3 h-3"
+        className="h-3 w-3"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -38,7 +38,7 @@ const Header = ({ closeModal }) => (
 
 const Body = ({ children }) => {
   return (
-    <div className="max_width px-4 grid md:grid-cols-2 lg:grid-cols-2 pt-2 gap-4">
+    <div className="max_width grid gap-4 px-4 pt-2 md:grid-cols-2 lg:grid-cols-2">
       {children}
     </div>
   );

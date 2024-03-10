@@ -31,16 +31,16 @@ const MovieDetail = ({ movieId, closeModal }) => {
             />
           </div>
           <div className="max-w-[50rem]">
-            <h6 className="text-xl font-bold text-center py-2">
+            <h6 className="py-2 text-center text-xl font-bold">
               {movie?.Title}
             </h6>
 
-            <div className="px-2 mb-4">
-              <h6 className="font-bold text-base mb-1">STORY:</h6>
+            <div className="mb-4 px-2">
+              <h6 className="mb-1 text-base font-bold">STORY:</h6>
               <p>{movie?.Plot}</p>
             </div>
-            <div className="px-2 mb-4">
-              <h6 className="font-bold text-base mb-1">Director:</h6>
+            <div className="mb-4 px-2">
+              <h6 className="mb-1 text-base font-bold">Director:</h6>
               <p>{movie?.Director}</p>
             </div>
           </div>

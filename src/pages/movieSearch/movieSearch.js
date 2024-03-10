@@ -30,13 +30,13 @@ const MovieSearch = () => {
   const isPagination = movies?.length > 0 && numberOfPages > 1;
 
   return (
-    <div className="bg-light_black h-full w-full ">
-      <div className=" p-10  flex justify-between items-center">
-        <h3 className="text-3xl font-bold text-center"> Movies </h3>
+    <div className="h-full w-full bg-light_black ">
+      <div className=" flex  items-center justify-between p-10">
+        <h3 className="text-center text-3xl font-bold"> Movies </h3>
         <SearchInput onSearchMovie={onSearchMovie} />
       </div>
       <div className="p-10">
-        <div className="flex justify-between items-center ">
+        <div className="flex items-center justify-between ">
           <h2 className="text-xl font-bold">Search Results</h2>
         </div>
         {isLoading ? (
@@ -47,8 +47,8 @@ const MovieSearch = () => {
           <div className="grid grid-cols-3 gap-8 py-10">
             {movies.map(({ Title, Year, imdbID: id }) => (
               <button key={id} onClick={() => setMovieId(id)}>
-                <div className="flex flex-col justify-center dark:text-gray-400 dark:bg-gray-700 h-24 relative transition duration-200 ease-in transform hover:scale-110">
-                  <h1 className="text-center py-2 text-xl">{Title}</h1>
+                <div className="relative flex h-24 transform flex-col justify-center transition duration-200 ease-in hover:scale-110 dark:bg-gray-700 dark:text-gray-400">
+                  <h1 className="py-2 text-center text-xl">{Title}</h1>
                   <span>{Year}</span>
                 </div>
               </button>
@@ -57,10 +57,10 @@ const MovieSearch = () => {
         )}
       </div>
       {isPagination && (
-        <div className="flex justify-end items-center px-10">
+        <div className="flex items-center justify-end px-10">
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={() => setPageNumber(pageNumber - 1)}
             disabled={pageNumber === 1}
           >
@@ -71,7 +71,7 @@ const MovieSearch = () => {
           </span>
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={() => setPageNumber(pageNumber + 1)}
             disabled={pageNumber === numberOfPages}
           >

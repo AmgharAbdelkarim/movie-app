@@ -1,7 +1,7 @@
 const Modal = ({ children }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center ">
-      <div className="fixed inset-0 bg-black opacity-50"></div>
+      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm "></div>
       <div className="relative z-10 h-4/6 w-full max-w-3xl rounded p-6 shadow-lg dark:bg-gray-700 dark:text-gray-400 ">
         {children}
       </div>
@@ -38,7 +38,7 @@ const Header = ({ closeModal }) => (
 
 const Body = ({ children }) => {
   return (
-    <div className="max_width grid gap-4 px-4 pt-2 md:grid-cols-2 lg:grid-cols-2">
+    <div className="max_width grid content-center gap-4 px-4 pt-2 md:grid-cols-2 lg:grid-cols-2">
       {children}
     </div>
   );

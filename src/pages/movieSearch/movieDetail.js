@@ -43,7 +43,7 @@ const MovieDetail = ({ movieId, closeModal }) => {
             </h6>
 
             <div className="mb-4 px-2">
-              <h6 className="mb-1 text-base font-bold">STORY:</h6>
+              <h6 className="mb-1 text-base font-bold">Plot:</h6>
               <p>{movie?.Plot}</p>
             </div>
             <div className="mb-4 px-2">

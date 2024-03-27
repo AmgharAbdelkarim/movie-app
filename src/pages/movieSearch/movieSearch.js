@@ -11,7 +11,7 @@ const MovieSearch = () => {
   const [movieId, setMovieId] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
-  let { data, isLoading, isError } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ['movies', movieTitle, pageNumber],
     queryFn: () => getMoviesByTitle(movieTitle, pageNumber),
   });
